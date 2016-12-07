@@ -336,6 +336,21 @@ public class UtilsBitByte {
     }
     
     /**
+     * Converts integer to a four byte array 
+     *
+     * @param integer
+     * @return a byte[] 4 bytes long
+     */
+    public static byte[] fromIntBigEndian(Integer value) {
+    	byte[] bytes = new byte[4];
+    	bytes[0] = (byte) ((value >> 24) & 0xff);
+    	bytes[1] = (byte) ((value >> 16) & 0xff);
+    	bytes[2] = (byte) ((value >> 8) & 0xff);
+    	bytes[3] = (byte) (value & 0xff);
+        return bytes;
+    }
+    
+    /**
 	 * 
 	 * @param pacote
 	 * @return byte[] com tamnho de 2 bytes
